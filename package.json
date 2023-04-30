@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "@types/node": "^18",
+    "csv-parse": "^5.3.8",
+    "nuxt": "^3.4.2",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "@storefront-ui/vue": "^2.1.0"
+  }
+}
