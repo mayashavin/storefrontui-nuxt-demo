@@ -7,7 +7,7 @@
     </ul>
 </template>
 <script setup lang="ts">
-import { useProducts } from '~/composables/useProducts';
+import { useProducts } from '../composables/useProducts';
 
 const { products } = useProducts();
 </script>

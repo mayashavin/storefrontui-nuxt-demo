@@ -25,6 +25,7 @@
               <SfLink
                 :href="item.path"
                 variant="secondary"
+                :tag="NuxtLink"
                 class="leading-5 no-underline text-inherit hover:underline active:underline whitespace-nowrap outline-secondary-600"
               >
                 {{ item.name }}
@@ -42,6 +43,7 @@
           v-if="index === 0"
           :href="item.path"
           variant="secondary"
+          :tag="NuxtLink"
           class-name="inline-flex leading-5 no-underline hover:underline active:underline whitespace-nowrap outline-secondary-600 text-neutral-500"
         >
           <SfIconHome size="sm" />
@@ -50,6 +52,7 @@
           v-else
           :href="item.path"
           variant="secondary"
+          :tag="NuxtLink"
           class="leading-5 no-underline hover:underline active:underline whitespace-nowrap outline-secondary-600 text-inherit"
         >
           {{ item.name }}
@@ -62,9 +65,17 @@
 <script lang="ts" setup>
 import { SfDropdown, SfButton, SfLink, SfIconMoreHoriz, SfIconHome } from '@storefront-ui/vue';
 import { ref } from 'vue';
-import { useBreadcrumbs } from '../composables/useBreadcrumbs';
 
-const { breadcrumbs } = useBreadcrumbs();
+import { resolveComponent } from 'vue';
+
+const NuxtLink = resolveComponent('NuxtLink');
+const props = defineProps({
+  breadcrumbs: {
+    type: Array,
+    required: true,
+  },
+});
+
 const dropdownOpened = ref(false);
 const close = () => {
   dropdownOpened.value = false;
